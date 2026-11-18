@@ -11,35 +11,52 @@
 <meta property="og:url" content="https://ha-zen.co.jp/">
 <meta property="og:image" content="https://ha-zen.co.jp/assets/ogp.png">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#133649">
 <link rel="icon" href="/assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
 <style>
-  :root { --navy: #133649; --ink: #141414; --sub: #5C6166; --pale: #F0F4F7; --line: #D3DCE2; }
+  :root { --navy: #133649; --cream: #FEFBD7; --ink: #141414; --text: #3B3F43; --sub: #5C6166; --tint: #E8F1F6; --line: #D3DCE2; }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body { margin: 0; font-family: 'Zen Kaku Gothic New', sans-serif; color: var(--ink); background: #fff; line-height: 1.8; }
   a { color: var(--navy); }
+  a:hover { color: #0B2230; }
   .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
   .narrow { max-width: 760px; margin: 0 auto; padding: 0 24px; }
 
-  header { background: var(--pale); }
+  header { background: var(--navy); }
   header .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding-top: 20px; padding-bottom: 20px; }
   .brand { display: block; line-height: 0; }
   .brand img { height: 22px; width: auto; display: block; }
-  nav { display: flex; gap: 28px; font-size: 13px; letter-spacing: .12em; }
-  nav a { text-decoration: none; color: #3B3F43; }
-  nav a:hover { color: var(--navy); }
+  nav { display: flex; flex-wrap: wrap; gap: 12px 28px; font-size: 13px; letter-spacing: .12em; }
+  nav a { text-decoration: none; color: #DCE4E9; }
+  nav a:hover { color: #fff; }
 
-  .hero { background: var(--pale); padding: 168px 24px 200px; display: flex; justify-content: center; }
+  .hero { background: var(--navy); padding: 168px 24px 200px; display: flex; justify-content: center; }
   .hero h1 { margin: 0; line-height: 0; }
   .hero img { width: 168px; height: auto; display: block; }
 
   section.block { padding: 104px 0; }
-  section.block.alt { background: var(--pale); }
+  section.tint { background: var(--tint); }
   h2 { margin: 0 0 40px; font-size: 14px; font-weight: 700; letter-spacing: .2em; color: var(--navy); }
+
+  .services { display: flex; flex-wrap: wrap; gap: 40px 32px; }
+  .service { flex: 1 1 200px; min-width: 0; border-top: 2px solid var(--navy); padding-top: 24px; text-align: center; }
+  .service svg { display: block; margin: 0 auto 20px; }
+  .service .num { margin: 0 0 6px; font-size: 12px; letter-spacing: .12em; color: var(--sub); }
+  .service h3 { margin: 0 0 12px; font-size: 17px; font-weight: 700; }
+  .service .desc { margin: 0 auto; max-width: 15em; font-size: 14px; color: var(--text); text-align: left; }
+
+  .profile { display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start; }
+  .profile img { flex: 0 0 220px; width: 220px; height: 275px; object-fit: cover; display: block; border-radius: 2px; }
+  .profile .body { flex: 1 1 320px; min-width: 0; }
+  .profile .role { margin: 0; font-size: 13px; color: var(--sub); }
+  .profile .name { margin: 2px 0 0; font-size: 22px; font-weight: 700; letter-spacing: .08em; }
+  .profile .en { margin: 0 0 24px; font-size: 13px; color: var(--sub); letter-spacing: .06em; }
+  .profile .bio { margin: 0; font-size: 15px; color: var(--text); }
 
   dl { margin: 0; font-size: 15px; }
   dl div { display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 18px 0; border-bottom: 1px solid var(--line); }
@@ -48,18 +65,27 @@
   dd { margin: 0; flex: 1 1 280px; }
   dd .en { font-size: 13px; color: var(--sub); letter-spacing: .04em; }
 
-  .lead { margin: 0 0 8px; font-size: 15px; color: #3B3F43; }
+  .lead { margin: 0 0 8px; font-size: 15px; color: var(--text); }
   .mail { font-size: 15px; word-break: break-all; }
 
-  footer { padding: 32px 24px; text-align: center; font-size: 12px; letter-spacing: .1em; color: var(--sub); }
+  @media (max-width: 600px) {
+    header .wrap { flex-direction: column; align-items: flex-start; }
+    nav { gap: 8px 18px; font-size: 12px; letter-spacing: .08em; }
+    .hero { padding: 120px 24px 140px; }
+    section.block { padding: 80px 0; }
+  }
+
+  footer { background: var(--navy); padding: 32px 24px; text-align: center; font-size: 12px; letter-spacing: .1em; color: #A9B9C4; }
 </style>
 </head>
 <body>
 
 <header>
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="株式会社HAZEN トップへ"><img src="/assets/logo-h.svg" alt="HAZEN" width="78" height="22"></a>
+    <a class="brand" href="#top" aria-label="株式会社HAZEN トップへ"><img src="/assets/logo-h-cream.svg" alt="HAZEN" width="78" height="22"></a>
     <nav aria-label="Menu">
+      <a href="#service">SERVICE</a>
+      <a href="#profile">PROFILE</a>
       <a href="#company">COMPANY</a>
       <a href="#contact">CONTACT</a>
     </nav>
@@ -68,7 +94,48 @@
 
 <main>
   <section id="top" class="hero">
-    <h1><img src="/assets/logo.svg" alt="株式会社HAZEN" width="168" height="174"></h1>
+    <h1><img src="/assets/logo-cream.svg" alt="株式会社HAZEN" width="168" height="174"></h1>
+  </section>
+
+  <section id="service" class="block">
+    <div class="narrow">
+      <h2>SERVICE</h2>
+      <div class="services">
+        <div class="service">
+          <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#133649" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><polygon points="15.5 8.5 13.6 13.6 8.5 15.5 10.4 10.4 15.5 8.5"/></svg>
+          <p class="num">01</p>
+          <h3>フラクショナルCHRO</h3>
+          <p class="desc">社外の人事責任者として経営に参画し、人事戦略の立案から実行までを担います。</p>
+        </div>
+        <div class="service">
+          <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#133649" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2.5" width="6" height="5" rx="1"/><rect x="2.5" y="16.5" width="6" height="5" rx="1"/><rect x="15.5" y="16.5" width="6" height="5" rx="1"/><path d="M12 7.5v4.5M5.5 16.5V12h13v4.5"/></svg>
+          <p class="num">02</p>
+          <h3>人事制度・組織づくり</h3>
+          <p class="desc">評価・報酬制度設計、マネジメント体制の構築、上場を見据えた人事・労務体制構築を支援します。</p>
+        </div>
+        <div class="service">
+          <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#133649" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 20v-1.5a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4V20"/><circle cx="8.5" cy="7.5" r="3.5"/><path d="M19 8.5v6M22 11.5h-6"/></svg>
+          <p class="num">03</p>
+          <h3>採用支援</h3>
+          <p class="desc">採用戦略・求人設計からスカウト運用、候補者対応まで、採用の仕組みづくりを支援します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="profile" class="block tint">
+    <div class="narrow">
+      <h2>PROFILE</h2>
+      <div class="profile">
+        <img src="/assets/profile.jpg" alt="早川 良太" width="220" height="275">
+        <div class="body">
+          <p class="role">代表取締役</p>
+          <p class="name">早川 良太</p>
+          <p class="en">Ryota Hayakawa</p>
+          <p class="bio">リクルートグループで広告営業・ゲームプロデューサーを経験。株式会社MUGENUPで人事部門をゼロから立ち上げ、ソウルドアウト株式会社では中国事業の立ち上げとグループ全体の採用を担当し、東証マザーズ上場・東証一部への市場変更を経験。株式会社スピークバディでは人事責任者として、組織拡大を牽引。2026年、株式会社HAZENを設立。</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section id="company" class="block">
@@ -84,7 +151,7 @@
     </div>
   </section>
 
-  <section id="contact" class="block alt">
+  <section id="contact" class="block tint">
     <div class="narrow">
       <h2>CONTACT</h2>
       <p class="lead">お問い合わせは、以下のメールアドレスまでご連絡ください。</p>
